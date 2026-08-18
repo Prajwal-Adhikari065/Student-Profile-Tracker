@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Profile</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <!-- Form -->
+      <section class="form-section">
+        <form id="profileForm">
+          <h2>Create Profile</h2>
+          <p>Send your information to the Express server.</p>
+
+          <div class="field">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Enter your username"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label for="age">Age</label>
+            <input
+              type="number"
+              id="age"
+              name="age"
+              placeholder="Enter your age"
+              min="1"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label for="language">Favorite Language</label>
+
+            <select id="language" name="fav_language">
+              <option value="JavaScript">JavaScript</option>
+              <option value="Python">Python</option>
+              <option value="C">C</option>
+              <option value="C++">C++</option>
+              <option value="TypeScript">TypeScript</option>
+              <option value="Java">Java</option>
+            </select>
+          </div>
+
+          <button type="submit">Send Profile</button>
+        </form>
+      </section>
+
+      <!-- Student Data -->
+      <section class="data-section">
+        <div class="data-header">
+          <h2>Student Data</h2>
+          <button id="refreshBtn" type="button">↻ Refresh</button>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Age</th>
+                <th>Language</th>
+              </tr>
+            </thead>
+
+            <tbody id="studentTable">
+              <!-- JavaScript will insert rows here -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
