@@ -42,15 +42,40 @@ async function saveStudentData(data) {
 
 async function getStudentData() {
   console.log("Fetching Data from Backend....");
+  
 
   const result = await client.query("SELECT * FROM students_hobby");
 
-  console.log("Data:", result.rows);
 
   return result.rows;
+}
+
+async function deleteStudentData(username) {
+  console.log(`Deleting student ${username} from database...`);
+  const query = `DELETE FROM students_hobby WHERE username = $1;`;
+  await client.query(query, [username]);
+  console.log("Data deleted successfully");
+}
+
+async function updateStudentData(username, data) {
+  const { age, fav_language } = data;
+  console.log(`Updating student ${username} in database...`);
+  
+  const query = `
+    UPDATE students_hobby 
+    SET age = $1, fav_language = $2 
+    WHERE username = $3;
+  `;
+  
+  await client.query(query, [age, fav_language, username]);
 }
 
 module.exports = {
   saveStudentData,
   getStudentData,
+  deleteStudentData,
+  updateStudentData,
 };
+
+
+

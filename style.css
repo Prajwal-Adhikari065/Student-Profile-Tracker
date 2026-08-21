@@ -73,7 +73,10 @@ button {
 button:hover {
   background: #444;
 }
-
+.updit{
+  font-size: 15px;
+  pointer-events: none;
+}
 /* Student Table */
 
 .data-section h2 {
