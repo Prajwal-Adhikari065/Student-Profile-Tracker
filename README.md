@@ -1,6 +1,6 @@
 # 🎓 Student Profile Tracker
 
-A full-stack web application for creating and viewing student profiles along with their favorite programming languages.
+A full-stack web application for CRUD operations on student profiles along with their favorite programming languages.
 
 The application features a responsive frontend built with **HTML, CSS, and Vanilla JavaScript**, connected to a **Node.js + Express.js backend** and a **PostgreSQL database**.
 
@@ -34,36 +34,14 @@ The application features a responsive frontend built with **HTML, CSS, and Vanil
 
 ## ✨ Features
 
-* 👤 **Create Student Profiles**
-
-  * Add username
-  * Add age
-  * Add favorite programming language
-
-* 📋 **View Student Profiles**
-
-  * Fetch student records from PostgreSQL
-  * Display data dynamically in a structured table
-
-* 🔄 **REST API**
-
-  * `POST /profile` for creating profiles
-  * `GET /profile` for retrieving profiles
-
-* 🗄️ **Automatic Database Table Creation**
-
-  * Checks whether the required table exists
-  * Creates the table automatically when the application starts
-
-* 🔐 **Environment Variable Protection**
-
-  * Database credentials are stored inside `.env`
-  * `.env` is excluded from Git using `.gitignore`
-
-* 📱 **Responsive Frontend**
-
-  * Works across desktop and mobile screen sizes
-
+- 👤 **Create Student Profiles:** Add username, age, and favorite programming language.
+- 📋 **View Student Profiles:** Fetch and display stored records dynamically in a clean table.
+- ✏️ **Update Profiles:** Select and edit an existing student profile in real-time.
+- 🗑️ **Delete Profiles:** Remove student profiles directly from the database using their primary key (`username`).
+- 🔄 **RESTful API:** Full CRUD operations using HTTP methods (`GET`, `POST`, `PUT`, `DELETE`).
+- 🗄️ **Automatic Database Setup:** Auto-creates the required `students_hobby` table on application start.
+- 🔐 **Environment Variable Protection:** Keeps database secrets safe using `.env` and `.gitignore`.
+- 📱 **Responsive UI:** Clean interface styled with custom CSS and interactive button states.
 ---
 
 ## 📂 Project Structure
@@ -341,8 +319,8 @@ This prevents sensitive credentials and installed dependencies from being commit
 
 Possible improvements for future versions:
 
-* [ ] Add student profile deletion
-* [ ] Add profile editing/updating
+* ✅ Add student profile deletion
+* ✅ Add profile editing/updating
 * [ ] Add search functionality
 * [ ] Add sorting and filtering
 * [ ] Add form validation
@@ -359,7 +337,8 @@ Possible improvements for future versions:
 
 # 📸 Screenshots
 
-<img width="1910" height="965" alt="image" src="https://github.com/user-attachments/assets/f7fd28fd-a1f4-4f42-bfc7-a54f871985c5" />
+<img width="1917" height="971" alt="image" src="https://github.com/user-attachments/assets/7fc624bf-db8a-4c67-929a-0e7478f92290" />
+
 
 
 
