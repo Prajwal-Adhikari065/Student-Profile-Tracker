@@ -13,23 +13,31 @@ const client = new Client({
 
 client
   .connect()
-  .then(() => console.log("Database Connected Successfully"))
+  .then(async() =>{
+    console.log("Database Connected Successfully");
+     await createTableIfNotExists();
+  } )
+  
   .catch((err) => console.error("Database connection error:", err));
 
-async function saveStudentData(data) {
-  const { username, age, fav_language } = data;
 
+  async function createTableIfNotExists() {
   const query = `
-        CREATE TABLE IF NOT EXISTS students_hobby(
-            username VARCHAR(50) PRIMARY KEY,
-            age INT,
-            fav_language VARCHAR(15),
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        );
-    `;
+    CREATE TABLE IF NOT EXISTS students_hobby(
+      username VARCHAR(50) PRIMARY KEY,
+      age INT,
+      fav_language VARCHAR(15),
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+  `;
+  await client.query(query);
+  console.log("Table initialized");
+ 
+}
 
-  const result = await client.query(query);
-  console.log("Saving student data in database.....");
+async function saveStudentData(data) {
+const { username, age, fav_language } = data;
+  
   const insertQuery = `
         INSERT INTO students_hobby (username, age, fav_language)
         VALUES ($1, $2, $3);
